@@ -1,4 +1,5 @@
 class Api::V1::TreesController < ApplicationController
+
   require "binary_tree"
 
   def create
@@ -8,6 +9,7 @@ class Api::V1::TreesController < ApplicationController
     root = Node.new(tree_params.shift)
     tree_params.each{|e| BinaryTree.push_node(root, e) }
     @tree << root
+
     render status: 200, json: @tree
 
   end
@@ -38,4 +40,5 @@ class Api::V1::TreesController < ApplicationController
        obj.require(key)
      end
   end
+
 end

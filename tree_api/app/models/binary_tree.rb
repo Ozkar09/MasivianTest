@@ -1,4 +1,4 @@
-class BinaryTree < ApplicationRecord
+class BinaryTree
 
   def self.push_node(node, value)
     if(value > node.value)
